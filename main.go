@@ -97,7 +97,7 @@ const TIMESTAMP string = "timestamp"
 // ArgsMap is a generic map[string]interface{} to be used as a receiver
 type ArgsMap map[string]interface{}
 
-var log = NewContractLogger(DEFAULTNICKNAME, DEFAULTLOGGINGLEVEL)
+//var log = NewContractLogger(DEFAULTNICKNAME, DEFAULTLOGGINGLEVEL)
 
 // ************************************
 // start the message pumps
@@ -111,7 +111,7 @@ func main() {
 
 // Init is called in deploy mode when contract is initialized
 func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
-    var stateArg ContractState
+    //var stateArg ContractState
 	var err error
 
 	log.Info("Entering INIT")
@@ -129,13 +129,13 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string
 		return nil, err
 	}
 
-    if stateArg.Nickname == "" {
-        stateArg.Nickname = DEFAULTNICKNAME
+    //if stateArg.Nickname == "" {
+    //    stateArg.Nickname = DEFAULTNICKNAME
     }
 
 	(*log).setModule(stateArg.Nickname)
 
-    err = initializeContractState(stub, stateArg.Version, stateArg.Nickname)
+    //err = initializeContractState(stub, stateArg.Version, stateArg.Nickname)
     if err != nil {
         return nil, err
     }
@@ -240,15 +240,15 @@ func (t *SimpleChaincode) createAsset(stub shim.ChaincodeStubInterface, args []s
     }
 
     // is assetID present or blank?
-    assetIDBytes, found := getObject(argsMap, ASSETID)
-    if found {
-        assetID, found = assetIDBytes.(string)
-        if !found || assetID == "" {
-            err := errors.New("createAsset arg does not include assetID")
-            log.Error(err)
-            return nil, err
-        }
-    }
+    //assetIDBytes, found := getObject(argsMap, ASSETID)
+    //if found {
+    //    assetID, found = assetIDBytes.(string)
+    //    if !found || assetID == "" {
+    //        err := errors.New("createAsset arg does not include assetID")
+    //        log.Error(err)
+    //        return nil, err
+    //    }
+    //}
 
     found = assetIsActive(stub, assetID)
     if found {
