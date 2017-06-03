@@ -133,7 +133,7 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string
     //    stateArg.Nickname = DEFAULTNICKNAME
     }
 
-	(*log).setModule(stateArg.Nickname)
+	//(*log).setModule(stateArg.Nickname)
 
     //err = initializeContractState(stub, stateArg.Version, stateArg.Nickname)
     if err != nil {
