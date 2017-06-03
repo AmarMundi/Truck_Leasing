@@ -161,7 +161,7 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 	} else if function == "setCreateOnUpdate" {
 		return nil, t.setCreateOnUpdate(stub, args)
 	}
-	err := fmt.Errorf("Invoke received unknown invocation: %s", function)
+	//err := fmt.Errorf("Invoke received unknown invocation: %s", function)
     log.Warning(err)
 	return nil, err
 }
