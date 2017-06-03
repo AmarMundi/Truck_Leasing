@@ -127,11 +127,11 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string
         err = fmt.Errorf("Version argument unmarshal failed: %s", err)
         log.Critical(err)
 		return nil, err
-	}
+}
 
     //if stateArg.Nickname == "" {
     //    stateArg.Nickname = DEFAULTNICKNAME
-    }
+   // }
 
 	//(*log).setModule(stateArg.Nickname)
 
@@ -142,7 +142,7 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string
 
     //log.Info("Contract initialized")
 	//return nil, nil
-}
+//}
 
 // Invoke is called in invoke mode to delegate state changing function messages
 func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
