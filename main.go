@@ -140,8 +140,8 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string
     //    return nil, err
     //}
 
-    log.Info("Contract initialized")
-	return nil, nil
+    //log.Info("Contract initialized")
+	//return nil, nil
 }
 
 // Invoke is called in invoke mode to delegate state changing function messages
