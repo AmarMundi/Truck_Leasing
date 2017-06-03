@@ -136,9 +136,9 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string
 	//(*log).setModule(stateArg.Nickname)
 
     //err = initializeContractState(stub, stateArg.Version, stateArg.Nickname)
-    if err != nil {
-        return nil, err
-    }
+    //if err != nil {
+    //    return nil, err
+    //}
 
     log.Info("Contract initialized")
 	return nil, nil
